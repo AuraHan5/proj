@@ -1,0 +1,160 @@
+<diagram program="umletino" version="15.1"><zoom_level>4</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>168</x><y>208</y><w>84</w><h>104</h></coordinates><panel_attributes>App
+--
+SurveyList:List&lt;Survey&gt;
+Scanner scanner
+--
+initializeApp(Survey[] surveys)
+displaySurveyList()
+showMenu()
+interactWithUser()
+showMenuSurveyManagement()
+interactWithUserManagement()
+SurveyManagement()
+SurveyCreation()
+SurveyModification()
+SurveyDeletion()
+SurveyAnswer()
+SurveyAnalysis()
+selectSurvey()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>324</x><y>208</y><w>84</w><h>104</h></coordinates><panel_attributes>Survey
+--
+id: int
+CreationDate: LocalDate
+description: String
+title: String
+questions: ArrayList
+answers: ArrayList
+analysis: ArrayList
+reader: BufferReader
+--
+CanviTitol()
+CanviDescr()
+gestionarPreg()
+addQuestions()
+ModifySurvey()
+SurveyAnalysis(int k)
+SurveyAnswer()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>248</x><y>248</y><w>84</w><h>20</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+té &gt;</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>220</y><w>100</w><h>68</h></coordinates><panel_attributes>Question
+--
+enunciat: String
+tipus: int
+sc: Scanner
+--
+getEnunciat()
+getType()
+validarResposta(Object resposta) abstract
+toString() 
+ModifyQuestion() abstract
+createQuestion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>404</x><y>252</y><w>64</w><h>20</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*
+té &gt;</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>380</y><w>220</w><h>96</h></coordinates><panel_attributes>Algorisme KMeans
+--
+k: int
+maxIterations: int
+centroids: Object[][]
+assignation: int[]
+min: double[]
+max: double[]
+--
+KMeans(int k, int maxIterations)
+getK()
+assignToCluster(Object[][] data, int[] variableType)
+initializeRandomCentroids(Object[][] data, int n, int[] variableType, double[] max, double[] min)
+findNearestCentroid(int i, int[] variableType, double[] max, double[] min, Object[][] data)
+calculateCentroids(Object[][] data, int n, int[] variableType)
+calculateCentroid(List&lt;Integer&gt; clusterIndexes, int[] variableType, Object[][] data)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>356</x><y>308</y><w>16</w><h>80</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=*</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>324</x><y>92</y><w>84</w><h>72</h></coordinates><panel_attributes>Answer
+--
+answer: Object[]
+reader: BufferedReader
+--
+Answer()
+initialize(int[] type, ArrayList&lt;Question&gt; questions)
+readSingleChoiceOrdered(Question question) 
+readSingleChoiceUnordered(Question question)
+readMultipleChoice(Question question)
+readFreeText()
+readFreeNumber()
+setAnswer(Object[] answer)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>356</x><y>160</y><w>16</w><h>56</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>356</x><y>336</y><w>76</w><h>12</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;170;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>424</x><y>320</y><w>84</w><h>40</h></coordinates><panel_attributes>Analysis
+--
+clusters: int[]
+--
+Analysis()
+initilize(int[] clusters)
+silouette(int[] result, Object[][] punts, int[] type, double[] min, double[] max, int k)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>188</x><y>108</y><w>84</w><h>48</h></coordinates><panel_attributes>Auxiliar Methods
+--
+levenshtein(String s1, String s2)
+calculateMode(List&lt;T&gt; choices)
+calculateAverage(List&lt;Double&gt; data)
+calculateMinVector(Object[][] data, int[] variableType)
+calculateMaxVector(Object[][] data, int[] variableType)
+calculateMax95P(List&lt;Double&gt; list)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>396</y><w>204</w><h>48</h></coordinates><panel_attributes>CalculateDistance
+--
+compute(Object[] point, Object[] centroid, int[] variableType, double[] max, double[] min)
+numericDistance(Object point, Object centroid, double max, double min)
+singleChoiceOrdered(Object point, Object centroid)
+singleChoiceUnordered(Object point, Object centroid)
+multipleChoiceUnordered(Object point, Object centroid)
+freeText(Object point, Object centroid)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>412</y><w>60</w><h>12</h></coordinates><panel_attributes>lt=-
+m1=
+m2=</panel_attributes><additional_attributes>10;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>228</x><y>516</y><w>288</w><h>40</h></coordinates><panel_attributes>KMeansPlusPLus
+--
+initializeCentroids(Object[][] data, int k, int[] variableType, double[] max, double[] min)
+calculateMinDistances(Object[][] data, Object[][] centroids, int centroidsCount, int[] variableType, double[] max, double[] min)
+chooseNextCentroid(double[] distances, Random random)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>472</y><w>16</w><h>52</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>452</x><y>100</y><w>84</w><h>68</h></coordinates><panel_attributes>ReadAnswers
+--
+filename: File
+data: Object[][]
+answer_column_type: int
+actual_results: List&lt;Object&gt;
+ids: List&lt;Object&gt;
+opt: int
+--
+Analysis()
+initilize(int[] clusters)
+silouette(int[] result, Object[][] punts, int[] type, double[] min, double[] max, int k)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>164</y><w>144</w><h>52</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes><additional_attributes>330;10;330;50;10;50;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>556</x><y>260</y><w>44</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>108</y><w>12</w><h>324</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;790</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>188</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>336</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>108</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>420</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>260</y><w>48</w><h>12</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>628</x><y>88</y><w>84</w><h>40</h></coordinates><panel_attributes>FreeNumberQuestion
+--
+validarResposta(Object resposta)
+ModifyQuestion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>628</x><y>172</y><w>84</w><h>40</h></coordinates><panel_attributes>SingleChoiceQuestionOrdered
+--
+opcions: List&lt;String&gt;
+--
+validarResposta(Object resposta)
+ModifyQuestion()
+toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>628</x><y>400</y><w>84</w><h>40</h></coordinates><panel_attributes>FreeTextQuestion
+--
+FreeTextQuestion(String enunciat)
+validarResposta(Object resposta)
+ModifyQuestion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>628</x><y>240</y><w>84</w><h>40</h></coordinates><panel_attributes>SingleChoiceQuestionUnordered
+--
+opcions: List&lt;String&gt;
+--
+validarResposta(Object resposta)
+ModifyQuestion()
+toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>628</x><y>316</y><w>84</w><h>48</h></coordinates><panel_attributes>MultipleChoiceQuestion
+--
+opcions: List&lt;String&gt;
+maxRespostes: int
+--
+MultipleChoiceQuestion(String enunciat, List&lt;String&gt; opcions, int maxRespostes)
+validarResposta(Object resposta)
+ModifyQuestion()
+toString()</panel_attributes><additional_attributes></additional_attributes></element></diagram>

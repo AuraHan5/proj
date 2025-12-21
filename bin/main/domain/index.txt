@@ -1,0 +1,25 @@
+Carpeta amb els codis de les classes del programa i de l algoritme.
+
+Analysis.java es on es fa l analisis del clustering de l enquesta.
+
+Answer.java es la classe resposta, on es guarden i es fan els seus metodes.
+
+App.java es el driver que controla el funcionament del programa.
+
+AuxiliarMethods.java es la classe que conte metodes de calculs especifics.
+
+CalculateDistance.java es la classe que calcula la distancia entre dues respostes d una enquesta.
+
+KMeans.java es la implementacio de l algoritme principal.
+
+KMeansDriver.java es el driver per executar kmeans amb els fitxers de prova.
+
+KMeansPlusPLus.java permet inicialitzar els centroides del kmeans.
+
+Question.java es la classe pregunta amb els metodes corresponents.
+
+ReadAnswers.java serveix per preprocessar les dades abans d enviarles al kmeans.
+
+Survey.java es la classe enquesta amb els metodes corresponents.
+
+TestAccuracy.java permet comprovar la precisio del clustering per les enquestes donades.
