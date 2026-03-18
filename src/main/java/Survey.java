@@ -1,0 +1,165 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.io.InputStreamReader;
+
+public class Survey{
+    //atributs
+    private int id;
+    private LocalDate CreationDate;
+    public String description;
+    public String title;
+    private ArrayList<Question> questions = new ArrayList<>();
+    private ArrayList<Answer> answers = new ArrayList<>();
+    private ArrayList<Analysis> analysis = new ArrayList<>();
+    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    public Survey(){
+        this.CreationDate = LocalDate.now();
+    }
+
+    //constructora
+    public Survey(int id, String descripcio, String titol){
+        this.id = id;
+        this.CreationDate = LocalDate.now();
+        this.description = descripcio;
+        this.title = titol;
+    }
+
+    //metodes
+
+    private void CanviTitol() throws IOException{
+        System.out.println("Insert the new title");
+        String newTitle = reader.readLine();
+        this.title = newTitle;
+    }
+
+    private void CanviDescr() throws IOException{
+        System.out.println("Insert the new Description");
+        String newDescription = reader.readLine();
+        this.description = newDescription;
+    }
+
+    private void gestionarPreg() throws IOException{
+        System.out.println("Now you can modify or erase the questions?\n");
+
+            Iterator<Question> it = questions.iterator();
+            while (it.hasNext()) {
+                Question p = it.next();
+                System.out.println(p.toString());
+                System.out.print("Vols (m) modify, (d) delete o (n) next? \n");
+
+                String opcio = reader.readLine();
+
+                if(opcio.equals("m")){
+                    p.ModifyQuestion();
+                }
+                else if(opcio.equals("d")){
+                    it.remove();
+                    System.out.println("Question erased.\n");
+                }
+                else{
+                    System.out.println("Going to the next question.");
+                }
+            }
+    }
+
+    public void addQuestions() throws IOException{
+        String a = "y";
+        while(a.equals("y")){
+            System.out.println("Do you want to add a new question? (y/n)");
+            a = reader.readLine();
+            if(!a.equals("y")) break;
+            Question q = Question.createQuestion(); // ja retorna el tipus correcte
+            if (q != null) questions.add(q);
+        }
+    }
+
+    public Object[] intToObject(int[] a){
+        Object[] result = new Object[a.length];
+        for(int i = 0; i<a.length; i++){
+            result[i] = a[i];
+        }
+        return result;
+    }
+
+    public void ModifySurvey() throws IOException{ // IMPORTANT dividir en diverses funcions privades
+
+        //canvi titol enquesta
+        System.out.println("Do you want to change the title? (y/n)");
+        String t = reader.readLine();
+        if(t.equals("y")){
+           CanviTitol();
+        }
+        //canvi descripcio enquesta
+        System.out.println("Do you want to change the description? (y/n)");
+        String d = reader.readLine();
+        if(d.equals("y")){
+            CanviDescr();
+        }
+
+        //mirar preguntes associades
+        if (questions.isEmpty()) {
+            System.out.println("This survey doesn't have questions");
+        }
+        else{
+            gestionarPreg();
+        }
+
+        addQuestions();
+        System.out.println("\nModification of the survey completed.");
+    }
+
+    public void SurveyAnalysis(int k) throws IOException{
+        KMeans km = new KMeans(k, 1000);
+        int nrows = answers.size();
+        int ncols = questions.size();
+        Object[][] data = new Object[nrows][ncols];
+        int[] varType = new int[ncols];
+        //inicialitza varType
+        for(int i = 0; i<ncols; ++i){
+            varType[i] = questions.get(i).getType();
+        }
+        //inicialitza data
+        for(int i = 0; i<nrows; ++i){
+            data[i] = (answers.get(i).getArray()); //no sempre serà int crec
+        }
+        ReadAnswers readanswers = new ReadAnswers();
+        readanswers.initializeVariableType(varType);
+        Object[][] data2 = readanswers.processData(data);
+        double maxSilhouette = 0;
+        int best_result[] = null; 
+        for(int i = 0; i<100; ++i){
+            int result[] = km.assignToCluster(data2, varType);
+            Analysis a = new Analysis();
+            analysis.add(a);
+            a.initialize(result);
+            double[] min = AuxiliarMethods.calculateMinVector(data2, varType);
+            double[] max = AuxiliarMethods.calculateMaxVector(data2, varType);
+            double q = a.silouette(result, data2, varType, min, max, k);
+            if(i == 0 || q > maxSilhouette){
+                maxSilhouette = q;
+                best_result = result;
+            }
+        }
+        for(int i = 0; i<best_result.length; ++i){
+            System.out.println("The answer {" + i + "} belongs to the cluster {" + best_result[i] + "}");
+        }
+    }
+
+    public void SurveyAnswer() throws IOException {
+        String preg;
+        Answer a = new Answer();
+        int t[] = new int[questions.size()];
+        for(int i = 0; i<questions.size(); ++i){
+            t[i] = questions.get(i).getType();
+        }
+        a.initialize(t, questions);
+        answers.add(a);
+        
+    }
+
+}

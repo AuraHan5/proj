@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit 5 dependency
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+test {
+    useJUnitPlatform() // required for JUnit 5
+
+    // Console logging for test results
+    testLogging {
+        events "passed", "skipped", "failed"       // show all test results
+        exceptionFormat "full"                     // full stack traces for failures
+        showStandardStreams = true                 // show System.out.println output
+    }
+}

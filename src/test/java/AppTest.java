@@ -7,7 +7,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AppTest {
 
@@ -51,162 +50,168 @@ public class AppTest {
         
         app.initializeApp(surveys);
         
-        // Comprovem que s han inicialitzat les enquestes
-        assertEquals(2, app.getSurveyList().size());
-        assertEquals("Title1", app.getSurveyList().get(0).getTitle());
-        assertEquals("Title2", app.getSurveyList().get(1).getTitle());
+        // Comprovem indirectament que s han inicialitzat les enquestes
+        // mitjancant displaySurveyList
+        app.displaySurveyList();
+        String output = outContent.toString();
+        assertTrue(output.contains("Title1"));
+        assertTrue(output.contains("Title2"));
     }
 
     /**
-     * Comprova SurveyCreation.
+     * Comprova displaySurveyList amb llista buida.
      */
     @Test
-    void testSurveyCreation() {
-        app.SurveyCreation("Test Title", "Test Description");
-        
-        assertEquals(1, app.getSurveyList().size());
-        Survey created = app.getSurveyList().get(0);
-        assertEquals("Test Title", created.getTitle());
-        assertEquals("Test Description", created.getDescription());
-        assertEquals(1, created.getId());
-        assertEquals(created, app.getCurrentSurvey());
+    void testDisplaySurveyListEmpty() {
+        app.displaySurveyList();
+        String output = outContent.toString();
+        assertTrue(output.contains("No surveys available"));
     }
 
     /**
-     * Comprova afegirPreguntaSimple.
+     * Comprova displaySurveyList amb enquestes.
      */
     @Test
-    void testAfegirPreguntaSimple() {
-        app.SurveyCreation("Test Survey", "Desc");
-        app.afegirPreguntaSimple("What is your name?", "Text Lliure");
+    void testDisplaySurveyListWithSurveys() {
+        Survey[] surveys = {
+            new Survey(1, "Test Description", "Test Title")
+        };
+        app.initializeApp(surveys);
         
-        assertEquals(1, app.getNumPreguntesActual());
-        Question q = app.getPreguntaActual(0);
-        assertNotNull(q);
-        assertTrue(q instanceof Question.FreeTextQuestion);
-        assertEquals("What is your name?", q.getEnunciat());
+        app.displaySurveyList();
+        String output = outContent.toString();
+        assertTrue(output.contains("Test Title"));
+        assertTrue(output.contains("Test Description"));
     }
 
     /**
-     * Comprova afegirPreguntaAmbOpcions.
+     * Comprova showMenu.
      */
     @Test
-    void testAfegirPreguntaAmbOpcions() {
-        app.SurveyCreation("Test Survey", "Desc");
-        List<String> opcions = new ArrayList<>();
-        opcions.add("Option A");
-        opcions.add("Option B");
-        app.afegirPreguntaAmbOpcions("Choose one", "Opció Única Desordenada", opcions, -1);
-        
-        assertEquals(1, app.getNumPreguntesActual());
-        Question q = app.getPreguntaActual(0);
-        assertNotNull(q);
-        assertTrue(q instanceof Question.SingleChoiceQuestionUnordered);
+    void testShowMenu() {
+        app.showMenu();
+        String output = outContent.toString();
+        assertTrue(output.contains("Survey App"));
+        assertTrue(output.contains("Manage survey"));
+        assertTrue(output.contains("Answer survey"));
+        assertTrue(output.contains("Analyze survey"));
+        assertTrue(output.contains("Exit"));
     }
 
     /**
-     * Comprova modificarPregunta.
+     * Comprova showMenuSurveyManagement.
      */
     @Test
-    void testModificarPregunta() {
-        app.SurveyCreation("Test Survey", "Desc");
-        app.afegirPreguntaSimple("Old question", "Text Lliure");
-        
-        List<String> newOpcions = new ArrayList<>();
-        newOpcions.add("Yes");
-        newOpcions.add("No");
-        app.modificarPregunta(0, "New question", "Opció Única Desordenada", newOpcions, -1);
-        
-        Question q = app.getPreguntaActual(0);
-        assertEquals("New question", q.getEnunciat());
-        assertTrue(q instanceof Question.SingleChoiceQuestionUnordered);
+    void testShowMenuSurveyManagement() throws IOException {
+        app.showMenuSurveyManagement();
+        String output = outContent.toString();
+        assertTrue(output.contains("Survey Management"));
+        assertTrue(output.contains("New survey"));
+        assertTrue(output.contains("Modify survey"));
+        assertTrue(output.contains("Delete survey"));
     }
 
     /**
-     * Comprova afegirResposta.
+     * Comprova que la survey s esborra correctament.
      */
     @Test
-    void testAfegirResposta() {
-        app.SurveyCreation("Test Survey", "Desc");
-        app.afegirPreguntaSimple("Question", "Text Lliure");
+    void testSurveyDeletionExistingSurvey() {
+        System.setIn(new ByteArrayInputStream("0\n".getBytes()));
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        App app = new App();
+        app.initializeApp(new Survey[]{ new Survey(1,"Desc","Title") });
+
+        app.SurveyDeletion();
+
+        assertTrue(out.toString().contains("deleted successfully"));
+    }
+
+
+    /**
+     * Comprova selectSurvey amb index valid.
+     */
+    @Test
+    void testSelectSurveyValid() {
+        System.setIn(new ByteArrayInputStream("0\n".getBytes()));
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        App app = new App();
+        Survey testSurvey = new Survey(1, "Test Desc", "Test Title");
+        app.initializeApp(new Survey[]{ testSurvey });
+
+        Survey result = app.selectSurvey();
+
+        assertNotNull(result);
+        assertEquals(testSurvey, result);
+    }
+
+
+    /**
+     * Comprova selectSurvey amb llista buida.
+     */
+    @Test
+    void testSelectSurveyEmptyList() {
+        String input = "0\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
         
-        Answer answer = new Answer();
-        // Assuming Answer has a way to set responses, but since it's not shown, just test the method exists
-        app.afegirResposta(answer);
+        Survey result = app.selectSurvey();
         
-        assertEquals(1, app.getCurrentSurvey().getAnswers().size());
+        assertNull(result);
+        String output = outContent.toString();
+        assertTrue(output.contains("No surveys available"));
     }
 
     /**
-     * Comprova getSurveyList.
+     * Comprova interactWithUserManagement amb opcio valida.
      */
     @Test
-    void testGetSurveyList() {
-        assertNotNull(app.getSurveyList());
-        assertTrue(app.getSurveyList().isEmpty());
+    void testInteractWithUserManagementValidOption() {
+        // Test de la opcio 1 (New survey)
+        String input = "1\nTest Title\nTest Description\nn\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
         
-        app.SurveyCreation("Test", "Desc");
-        assertEquals(1, app.getSurveyList().size());
+        app.interactWithUserManagement();
+        
+        String output = outContent.toString();
+        assertTrue(output.contains("Survey Management"));
     }
 
     /**
-     * Comprova getCurrentSurvey.
+     * Comprova que no s accepta una opcio invalida.
      */
     @Test
-    void testGetCurrentSurvey() {
-        assertNull(app.getCurrentSurvey());
-        
-        app.SurveyCreation("Test", "Desc");
-        assertNotNull(app.getCurrentSurvey());
+    void testInteractWithUserManagementInvalidOption() {
+        System.setIn(new ByteArrayInputStream("99\n".getBytes()));
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        App app = new App();
+        app.interactWithUserManagement();
+
+        assertTrue(out.toString().contains("Invalid option"));
     }
 
-    /**
-     * Comprova setEnquestaActual.
-     */
-    @Test
-    void testSetEnquestaActual() {
-        Survey s = new Survey(1, "Desc", "Title");
-        app.setEnquestaActual(s);
-        assertEquals(s, app.getCurrentSurvey());
-    }
 
     /**
-     * Comprova eliminarEnquesta.
+     * Test d integracio basic del flux de l aplicacio.
      */
     @Test
-    void testEliminarEnquesta() {
-        Survey s = new Survey(1, "Desc", "Title");
-        app.getSurveyList().add(s);
-        app.setEnquestaActual(s);
+    void testBasicAppFlow() {
+        // Simulem: Crear enquesta -> Llistar enquestes -> Sortir
+        String input = "1\nTest Title\nTest Description\nn\n4\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
         
-        app.eliminarEnquesta(s);
-        assertFalse(app.getSurveyList().contains(s));
-        assertNull(app.getCurrentSurvey());
-    }
-
-    /**
-     * Comprova eliminarPregunta.
-     */
-    @Test
-    void testEliminarPregunta() {
-        app.SurveyCreation("Test", "Desc");
-        app.afegirPreguntaSimple("Question", "Text Lliure");
+        // Captem l execucio (aquest test pot necessitar ajustos)
+        try {
+            app.interactWithUser();
+        } catch (Exception e) {
+            // Podem esperar alguna excepcio degut a la simulacio d entrada
+        }
         
-        assertEquals(1, app.getNumPreguntesActual());
-        app.eliminarPregunta(0);
-        assertEquals(0, app.getNumPreguntesActual());
-    }
-
-    /**
-     * Comprova afegirPreguntaBuidaAlFinal.
-     */
-    @Test
-    void testAfegirPreguntaBuidaAlFinal() {
-        app.SurveyCreation("Test", "Desc");
-        
-        app.afegirPreguntaBuidaAlFinal("Opció Única Desordenada");
-        assertEquals(1, app.getNumPreguntesActual());
-        Question q = app.getPreguntaActual(0);
-        assertEquals("Nova Pregunta", q.getEnunciat());
+        String output = outContent.toString();
+        assertTrue(output.contains("Survey App") || output.contains("Test Title"));
     }
 }

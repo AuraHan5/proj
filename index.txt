@@ -1,0 +1,11 @@
+Aquest directori es el principal. Conte tots els arxius necessaris de gradle per fer els UnitTests. 
+
+Tambe conte el diagrama de classes i diagrama de casos d us, en format uxf, tot i que estan en la documentacio en forma d imatge.
+
+A mes, al subdirectori data es troben els dos datasets de prova en format csv. 
+
+Tambe trobem el Makefile, el funcionament del qual esta explicat al fitxer ReadMe.
+
+Tambe tenim la carpeta src amb el codi i els tests de tot el programa.
+
+Finalment, trobem la documentacio de tot el projecte amb les explicacions corresponents de tot el codi.
