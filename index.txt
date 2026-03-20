@@ -1,11 +1,21 @@
-Aquest directori es el principal. Conte tots els arxius necessaris de gradle per fer els UnitTests. 
+Projecte de Programació - Subgrup PROP 41.2
+Sistema de gestió i anàlisi d'enquestes amb clustering (K-Means i K-Medoids)
 
-Tambe conte el diagrama de classes i diagrama de casos d us, en format uxf, tot i que estan en la documentacio en forma d imatge.
+Estructura del projecte:
+- FONTS/: Codi font Java, tests, datasets i configuració de build
+- DOCS/: Documentació del projecte i diagrames UML
+- EXE/: Fitxers executables compilats (.class) generats per Make/Gradle
+- Alumnes.txt: Informació dels membres del grup
+- ReadMe.md: Instruccions d'ús (Makefile i Gradle)
 
-A mes, al subdirectori data es troben els dos datasets de prova en format csv. 
+Per començar:
+1. Aneu al directori FONTS/
+2. Compileu amb Make: make all
+3. Executeu amb Make: make run
+4. Tests amb Make: make test
 
-Tambe trobem el Makefile, el funcionament del qual esta explicat al fitxer ReadMe.
+Alternativament amb Gradle:
+- Compilar i tests: ./gradlew build test
+- Executar (si s'escau): ./gradlew run
 
-Tambe tenim la carpeta src amb el codi i els tests de tot el programa.
-
-Finalment, trobem la documentacio de tot el projecte amb les explicacions corresponents de tot el codi.
+Vegeu ReadMe.md per més detalls sobre les comandes disponibles.

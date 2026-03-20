@@ -1,0 +1,7 @@
+Directori de sortida (.class) per als tests unitaris.
+
+Inclou tests compilats per diverses classes (p. ex. CalculateDistanceTest, AuxiliarMethodsTest, SurveyTest, AnswerTest, QuestionTest).
+
+Nota:
+- La sortida oficial de Gradle per a tests resideix a FONTS/build/classes/java/test.
+- Aquest directori pot contenir resultats de compilacions prèvies via Make.

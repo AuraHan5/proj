@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ReadAnswersTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:53:00" hostname="DESKTOP-NOPFBTG" time="26.833">
+  <properties/>
+  <testcase name="testReadFileMissingTypesLineDefaultsNumeric()" classname="ReadAnswersTest" time="0.005"/>
+  <testcase name="testInitializeVariableType()" classname="ReadAnswersTest" time="0.001"/>
+  <testcase name="testReadFileWithSemicolonSeparator()" classname="ReadAnswersTest" time="0.002"/>
+  <testcase name="testReadFileFormatErrorYieldsNullCell()" classname="ReadAnswersTest" time="0.002"/>
+  <testcase name="testConstructorWithFile()" classname="ReadAnswersTest" time="0.001"/>
+  <testcase name="testProcessData()" classname="ReadAnswersTest" time="14.823"/>
+  <testcase name="testProcessDataFillsNullsAcrossTypes()" classname="ReadAnswersTest" time="11.981"/>
+  <testcase name="testGetVariableType()" classname="ReadAnswersTest" time="0.002"/>
+  <testcase name="testGetLabels()" classname="ReadAnswersTest" time="0.0"/>
+  <testcase name="testGetIds()" classname="ReadAnswersTest" time="0.0"/>
+  <testcase name="testProcessDataNumericAllNullsGetsDefault()" classname="ReadAnswersTest" time="0.001"/>
+  <testcase name="testReadFileSimple()" classname="ReadAnswersTest" time="0.001"/>
+  <testcase name="testReadFileSkipsShortRows()" classname="ReadAnswersTest" time="0.001"/>
+  <testcase name="testConstructor()" classname="ReadAnswersTest" time="0.0"/>
+  <system-out><![CDATA[Format error in some row: For input string: "John"
+Format error in some row: For input string: "not-a-number"
+
+Analyzing your answers...
+
+Analyzing your answers...
+
+Analyzing your answers...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

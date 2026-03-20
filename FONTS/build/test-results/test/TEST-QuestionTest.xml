@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="QuestionTest" tests="31" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:53:00" hostname="DESKTOP-NOPFBTG" time="0.066">
+  <properties/>
+  <testcase name="testFreeNumberValidInteger()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testMultipleChoiceEmptyArray()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeTextMaxLength()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeNumberValidDouble()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testMultipleChoiceMaxOne()" classname="QuestionTest" time="0.006"/>
+  <testcase name="testMultipleChoiceMaxTwo()" classname="QuestionTest" time="0.015"/>
+  <testcase name="testMultipleChoiceInvalidMaxTooLarge()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testMultipleChoiceValid()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testMultipleChoiceInvalidMaxZero()" classname="QuestionTest" time="0.002"/>
+  <testcase name="testSingleChoiceOrderedInvalidType()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeNumberInvalidString()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeTextNullInvalid()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeNumberExtremeValue()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeNumberNull()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testSingleChoiceUnorderedDuplicates()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testSingleChoiceUnorderedValidOption()" classname="QuestionTest" time="0.0"/>
+  <testcase name="testMultipleChoiceIndexOutOfRange()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testMultipleChoiceInvalidType()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeTextIntegerValid()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeTextMediumLength()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeTextShortTextValid()" classname="QuestionTest" time="0.0"/>
+  <testcase name="testSingleChoiceOrderedValidIndex()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testMultipleChoiceTooManyAnswers()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeTextEmpty()" classname="QuestionTest" time="0.0"/>
+  <testcase name="testSingleChoiceOrderedNegativeIndex()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testSingleChoiceUnorderedInvalidType()" classname="QuestionTest" time="0.0"/>
+  <testcase name="testMultipleChoiceNoLimit()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testFreeNumberInvalidSpecialValues()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testSingleChoiceOrderedIndexTooLarge()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testSingleChoiceUnorderedInvalidOption()" classname="QuestionTest" time="0.001"/>
+  <testcase name="testSingleChoiceOrderedOneOption()" classname="QuestionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

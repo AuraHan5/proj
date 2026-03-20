@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AnalysisTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:52:54" hostname="DESKTOP-NOPFBTG" time="0.249">
+  <properties/>
+  <testcase name="testInitializeEmptyArray()" classname="AnalysisTest" time="0.153"/>
+  <testcase name="testSilhouetteSinglePointClusters()" classname="AnalysisTest" time="0.017"/>
+  <testcase name="testSilhouetteTwoPointsTwoClusters()" classname="AnalysisTest" time="0.001"/>
+  <testcase name="testSilhouetteUnbalancedClusters()" classname="AnalysisTest" time="0.017"/>
+  <testcase name="testSilhouetteSimple()" classname="AnalysisTest" time="0.001"/>
+  <testcase name="testSilhouetteMismatchedLengths()" classname="AnalysisTest" time="0.025"/>
+  <testcase name="testSilhouetteSingleClusterAllPoints()" classname="AnalysisTest" time="0.001"/>
+  <testcase name="testSilhouettePerfectClusters()" classname="AnalysisTest" time="0.001"/>
+  <testcase name="testInitialize()" classname="AnalysisTest" time="0.014"/>
+  <testcase name="testSilhouetteKZero()" classname="AnalysisTest" time="0.001"/>
+  <testcase name="testConstructor()" classname="AnalysisTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

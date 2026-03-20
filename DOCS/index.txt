@@ -1,0 +1,8 @@
+Aquest directori conté la documentació del projecte.
+
+Contingut:
+- CasosÚs.uxf: Diagrama de casos d'ús (UMLet)
+- diagramaDeClasses.uxf: Diagrama de classes (UMLet)
+- diagramaDeClassesDomini.uxf: Diagrama de classes del domini (UMLet)
+- DiagramaDePersistència.pdf: Esquema de persistència i serialització
+- Documentació lliurament.pdf: Documentació completa del projecte (disseny, implementació i ús)

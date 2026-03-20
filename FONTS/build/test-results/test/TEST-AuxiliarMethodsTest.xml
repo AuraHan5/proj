@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AuxiliarMethodsTest" tests="47" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:52:54" hostname="DESKTOP-NOPFBTG" time="0.109">
+  <properties/>
+  <testcase name="testLevenshteinInsertion()" classname="AuxiliarMethodsTest" time="0.019"/>
+  <testcase name="calculateMinVectorNonNumericValue()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateAverageEmptyList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateAverageLargeValues()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateMaxVectorMultipleValues()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateIQREmptyList()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <testcase name="testCalculateMedianOdd()" classname="AuxiliarMethodsTest" time="0.002"/>
+  <testcase name="testCalculateMinVectorSingleValue()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <testcase name="calculateMaxVectorAllEquals()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateAverageWithNullElements()" classname="AuxiliarMethodsTest" time="0.002"/>
+  <testcase name="testCalculateMedianEven()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="test95thPercentileOrderedList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateModeAllValuesEqual()" classname="AuxiliarMethodsTest" time="0.002"/>
+  <testcase name="test95thPercentileAllNullsList()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <testcase name="testCalculateQuartilesNormal()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateMedianEmptyList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCosineSimilarityOppositeVectors()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateModeMultipleOptions()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateModeEmptyList()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <testcase name="test95thPercentileUnorderedList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateAverageOneValue()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateModeNormal()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testLevenshteinSubstitution()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <testcase name="testCosineSimilarityIdenticalVectors()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateMaxVectorNegative()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateModeWithNullElements()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <testcase name="calculateMinVectorNormal()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateAverageNegativeValues()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="test95thPercentileNullValuesList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testLevenshteinOneEmptyString()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testLevenshteinEqualStrings()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="test95thPercentileSingleValueList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateIQRWithNulls()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateModeSingleElement()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateModeAllValuesDifferent()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateAverageNormal()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="test95thPercentileRepeatedValuesList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCosineSimilarityZeroVectors()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateIQRNormal()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateMinVectorMultipleValues()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testLevenshteinEmptyStrings()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateMaxVectorNormal()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCosineSimilarityOrthogonalVectors()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateMinVectorAllEquals()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testLevenshteinDeletion()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="testCalculateQuartilesEmptyList()" classname="AuxiliarMethodsTest" time="0.001"/>
+  <testcase name="calculateMaxVectorNonNumericValue()" classname="AuxiliarMethodsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

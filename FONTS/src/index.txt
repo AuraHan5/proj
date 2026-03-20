@@ -1,0 +1,4 @@
+Aquest directori conté dues subcarpetes: main i test.
+
+- main: codi de les classes principals (domini, presentació, persistència i algorismes).
+- test: JUnit per a les classes principals i proves d'integració.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SurveyAnalysisTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:53:27" hostname="DESKTOP-NOPFBTG" time="0.008">
+  <properties/>
+  <testcase name="testSurveyAnalysisHandlesMissingAnswers()" classname="SurveyAnalysisTest" time="0.005"/>
+  <testcase name="testSurveyAnalysisSmallDataset()" classname="SurveyAnalysisTest" time="0.002"/>
+  <system-out><![CDATA[
+Analyzing your answers...
+The answer {0} belongs to the cluster {0}
+The answer {1} belongs to the cluster {0}
+
+Analyzing your answers...
+The answer {0} belongs to the cluster {1}
+The answer {1} belongs to the cluster {0}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

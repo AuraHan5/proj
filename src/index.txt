@@ -1,5 +1,0 @@
-Aquesta carpeta conte dues subcarpetes, main i test.
-
-main conte el codi de les classes principals.
-
-test conte els JUnit pertinents a les classes principals.

@@ -1,0 +1,25 @@
+Conte els tests unitaris i d integracio del projecte.
+
+Nucli d algorismes
+- calculateDistanceTest.java: distancies per a tots els tipus de variable, errors de formats i valors extrems.
+- AnalysisTest.java: casos de silhouette (clusters perfectes, punt unic, validacions de longituds).
+- KMeansTest.java i KMedoidsTest.java: clustering bàsic sobre conjunts petits.
+- TestAccuracyTest.java: precisio de l assignacio de clusters.
+
+Domini i dades
+- ReadAnswersTest.java: lectura/preprocessat de CSV (separadors, files curtes, errors de format) i imputacio de valors.
+- SurveyTest.java i SurveyAnalysisTest.java: operacions d enquesta i analisi end-to-end amb dades petites.
+- CtrlDominiTest.java i CtrlDominiHeadlessTest.java: inicialitzacio de controlador i fluxos bàsics sense UI.
+
+Models i IO
+- AuxiliarMethodsTest.java: utilitats de calcul i estadistics.
+- AnswerTest.java: gestio de respostes i inicialitzacions.
+- QuestionTest.java: validacions de tipus de preguntes.
+- LocalDateAdapterTest.java: format ISO, nuls i errors de parseig.
+
+Persistencia
+- GestorDeDadesTest.java: round-trip de JSON, fitxer nul i absencia de fitxer.
+
+Presentacio/arrencada
+- WordEmbeddingsTest.java: proves de càrrega/embeddings.
+- KMeansDriverTest.java: comportament del driver CLI amb entrades invàlides.

@@ -1,0 +1,12 @@
+Directori de sortida (.class) per al codi de domini i algorismes.
+
+Aquestes classes s'originen a FONTS/src/main/java i inclouen:
+- CtrlDomini, Survey, Question, Answer
+- ReadSurvey, ReadAnswers, GestorDeDades, LocalDateAdapter
+- Algorithm, KMeans, KMedoids, KMeansPlusPlus
+- AuxiliarMethods, CalculateDistance, Analysis, TestAccuracy
+- WordEmbeddings, KMeansDriver
+
+Nota:
+- Els noms aquí poden aparèixer com a .class (incloent classes internes).
+- Per compilar i obtenir .class oficials, utilitzeu Gradle (FONTS/build/classes/java/) o Make.

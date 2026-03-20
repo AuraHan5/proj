@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SurveyTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:53:27" hostname="DESKTOP-NOPFBTG" time="0.013">
+  <properties/>
+  <testcase name="testAddMultipleQuestions()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testGetTitle()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testAddQuestionsEmpty()" classname="SurveyTest" time="0.001"/>
+  <testcase name="testGetCreationDate()" classname="SurveyTest" time="0.001"/>
+  <testcase name="testGetId()" classname="SurveyTest" time="0.001"/>
+  <testcase name="testConstructorEmptyStrings()" classname="SurveyTest" time="0.001"/>
+  <testcase name="testIntToObjectNegative()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testAddQuestions()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testGetQuestions()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testGetAnswers()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testIntToObjectEmpty()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testGetAnalysis()" classname="SurveyTest" time="0.0"/>
+  <testcase name="testGetDescription()" classname="SurveyTest" time="0.001"/>
+  <testcase name="testIntToObjectNormal()" classname="SurveyTest" time="0.001"/>
+  <testcase name="testConstructor()" classname="SurveyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

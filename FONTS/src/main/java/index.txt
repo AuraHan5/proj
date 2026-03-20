@@ -1,0 +1,29 @@
+Carpeta amb el codi font principal (domini, presentacio, persistencia i algorismes).
+
+Domini
+- CtrlDomini.java: controlador de domini; gestiona enquestes, respostes i persistencia.
+- Survey.java: model d enquesta; manté preguntes, respostes i analisi.
+- Question.java: jerarquia de preguntes (numerica, unica ordenada, unica desordenada, multiple, text).
+- Answer.java: captura i emmagatzema respostes d usuari.
+- ReadSurvey.java i ReadAnswers.java: lectura/preprocessat de fitxers d enquestes i respostes.
+
+Persistencia
+- GestorDeDades.java: serialitzacio/deserialitzacio JSON amb Gson.
+- LocalDateAdapter.java: adaptador per a dates ISO en persistencia.
+
+Algorismes de clustering
+- Algorithm.java: classe abstracta per K-Means/K-Medoids.
+- KMeans.java i KMedoids.java: implementacions de clustering.
+- KMeansPlusPlus.java: inicialitzacio de centroides.
+- AuxiliarMethods.java: utilitats numeriques i de similitud (min/max, mitjanes, cosine, IQR, etc.).
+- CalculateDistance.java: distancia entre punts segons el tipus de variable.
+- Analysis.java: calcul del coeficient de silhouette.
+- TestAccuracy.java: mesura precisio comparant etiquetes reals vs clusters.
+- WordEmbeddings.java: gestio d embeddings de paraules per comparar textos.
+- KMeansDriver.java: driver CLI per executar clustering sobre datasets.
+
+Presentacio (Swing)
+- CtrlPresentacio.java: controlador de presentacio; delega accions a CtrlDomini.
+- VistaPrincipal.java i Main.java: arrencada i finestra principal.
+- Vistes: VistaMenu, VistaGestionar, VistaCrearEnquesta, VistaModificarEnquesta, VistaEsborrarEnquesta,
+  VistaCrearPregunta, VistaEditorPregunta, VistaSeleccionarEnquesta, VistaRespondreEnquesta, VistaAnalisis.

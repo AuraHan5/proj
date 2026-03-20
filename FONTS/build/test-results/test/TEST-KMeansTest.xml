@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="KMeansTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:53:00" hostname="DESKTOP-NOPFBTG" time="0.012">
+  <properties/>
+  <testcase name="testGetK()" classname="KMeansTest" time="0.0"/>
+  <testcase name="testAssignToClusterSinglePoint()" classname="KMeansTest" time="0.001"/>
+  <testcase name="testAssignToClusterEmptyData()" classname="KMeansTest" time="0.002"/>
+  <testcase name="testAssignToClusterKGreaterThanPoints()" classname="KMeansTest" time="0.0"/>
+  <testcase name="testConstructorZeroIterations()" classname="KMeansTest" time="0.001"/>
+  <testcase name="testAssignToClusterSingleCluster()" classname="KMeansTest" time="0.001"/>
+  <testcase name="testAssignToClusterSimple()" classname="KMeansTest" time="0.001"/>
+  <testcase name="testAssignToClusterIdenticalPoints()" classname="KMeansTest" time="0.001"/>
+  <testcase name="testAssignToClusterMixedData()" classname="KMeansTest" time="0.001"/>
+  <testcase name="testConstructor()" classname="KMeansTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

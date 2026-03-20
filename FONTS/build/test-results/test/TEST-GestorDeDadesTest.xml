@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GestorDeDadesTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-12-22T18:53:00" hostname="DESKTOP-NOPFBTG" time="0.115">
+  <properties/>
+  <testcase name="guardarICarregarFentRoundTrip()" classname="GestorDeDadesTest" time="0.095"/>
+  <testcase name="carregarRawSenseFitxerLlençaIOException()" classname="GestorDeDadesTest" time="0.003"/>
+  <testcase name="carregarRawQuanFitxerConteNullRetornaLlistaBuida()" classname="GestorDeDadesTest" time="0.015"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

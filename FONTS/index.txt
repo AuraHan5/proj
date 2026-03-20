@@ -1,0 +1,15 @@
+Aquest directori conté el codi font del projecte i tots els arxius necessaris per al desenvolupament.
+
+Contingut:
+- src/: Codi font Java del projecte (main i test)
+- data/: Datasets de prova en format CSV
+- build.gradle, settings.gradle: Configuració de Gradle
+- Makefile: Facilita la compilació, execució i testing (vegeu ReadMe.md)
+- gradlew, gradlew.bat: Scripts de Gradle wrapper
+- libs/gson-2.10.1.jar: Llibreria externa per JSON (Gson)
+- bin/, build/: Directoris generats per la compilació
+- .gradle/, .gitignore: Configuració de build i control de versions
+
+Comandes habituals:
+- Make: make all | make run | make test
+- Gradle: ./gradlew build test

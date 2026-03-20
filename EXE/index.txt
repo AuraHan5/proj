@@ -1,0 +1,11 @@
+Aquest directori conté els fitxers executables compilats del projecte (.class).
+
+Els arxius .class es poden generar de dues maneres:
+- Make (des de FONTS/):
+	- Compilar: make all
+	- Executar: make run
+- Gradle (des de FONTS/):
+	- Compilar i tests: ./gradlew build test
+	- Els .class es troben a FONTS/build/classes/java/
+
+Nota: Aquest directori EXE/ pot contenir compilacions prèvies; la sortida oficial de Gradle resideix a FONTS/build/.
